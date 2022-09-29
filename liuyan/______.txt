@@ -1,0 +1,17 @@
+运行环境：PHP>=5.4+PDO_SQLITE
+支持留言评论的吐槽系统
+前端使用bootstrap+jquery
+支持回复邮件提醒（需要支持socket+opensssl 默认使用的ssl，阿里云25端口是封的）
+初次运行会初始化，默认密码admin！
+ 
+调用代码：
+<script src="http://wxg.717fk.cn/app/class/ajax.php?act=new&id=10&p=30&r=http://wxg.717fk.cn/"></script>
+参数：
+id；留言条数
+p：留言内容长度截取
+r：留言板地址
+
+
+免费主机地：www.xuyuany.cn
+低价服务器: www.xuyuany.cn
+QQ群：1014625839
