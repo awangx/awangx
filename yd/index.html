@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>运动助手</title>
+    <meta name="keywords" content="一键刷步" />
+    <meta name="description" content="运动助手是一款免费的刷步平台，解放双脚" />
+    <link href="/yd/css/main.css" rel="stylesheet">
+    <link href="/yd/css/util.css" rel="stylesheet">
+    <script src="//music.clwl.online/Player/player.min.js" id="SinKingMusic" key="1471"></script>
+
+ <div class="limiter">
+        <div class="container-login100" style="background-image: url(https://api.mz-moe.cn/img.php);opacity:0.7">
+            <div class="wrap-login100 p-l-55 p-r-55 p-t-50 p-b-25">
+                <form class="login100-form validate-form" id='setWalk'>
+                    <span class="login100-form-title p-b-25" style="color:#006935;">运动助手</span>
+                    <div class="wrap-input100 validate-input m-b-8" data-validate="请输入小米运动登录账号">
+                        <input class="input100" type="text" id="phone" name="zyCount" placeholder="请输入小米运动登录账号"
+                            autocomplete="off">
+                        <span class="focus-input100" data-symbol="☑"></span>
+                    </div>
+                    <div class="wrap-input100 validate-input m-b-8" data-validate="请输入小米运动登录密码">
+                        <input class="input100" type="password" id="pwd" name="zyCount" placeholder="请输入小米运动登录密码"
+                            autocomplete="off">
+                        <span class="focus-input100" data-symbol="☑"></span>
+                    </div>
+                    <div class="wrap-input100 validate-input" data-validate="请输入要修改的步数">
+                        <input class="input100" type="text" id="step" name="zyStep" placeholder="输入步数 （列如：6666）">
+                        <span class="focus-input100" data-symbol="☑"></span>
+                    </div>
+                    <div class="container-login100-form-btn p-t-25">
+                        <div class="wrap-login100-form-btn">
+                            <div class="login100-form-bgbtn"></div>
+                            <button class="login100-form-btn" id='submit' onclick="login()" type="button">提交</button>
+                        </div>
+                    </div>
+                    <div class="txt1 text-left p-t-25 p-b-8">
+                        <span>使用帮助：</span><br />
+                        <span>
+                            1、安装【小米运动】APP并注册账号
+                        </span>
+                        <br />
+                        <span>
+                            2、绑定支付宝、微信等需要同步的平台
+                        </span>
+                        <br />
+                        <span>
+                            3、在本页面输入账号、密码及要修改的步数，点击提交修改
+                        </span>
+                        <br />
+                        <span>
+                            4、建议分次递增提交，不要修改到非人类的数值
+                        </span>
+                        
+                        <br />
+                        <span>
+                            6、更多帮助及常见问题请
+                            <h1><a href="./help.html" class="txt2">点击这里</a></h1>
+                        </span>
+                        <br />
+                    </div>
+                    <div class="flex-col-c p-t-8">
+                        <p style="text-align:center;">
+                            Copyright &copy;
+                            <span class="tm-current-year">2022</span>
+                            <a href="/" class="txt2">mr.wang</a>
+                        </p>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.26.0/axios.js"></script>
+	<script type="text/javascript">
+		function login() {
+			// 老板的账号
+			let phone = document.querySelector("#phone").value
+			if (phone == "") {
+				alert('手机号不能为空！')
+				return
+			}
+			// 老板的安全密码
+			let pwd = document.querySelector("#pwd").value
+			if (pwd == "") {
+				alert('密码不能为空！')
+				return
+			}
+			// 老板一脚走好多步
+			let step = document.querySelector("#step").value
+			if (step == "") {
+				alert('步数不能为空！')
+				return
+			}
+			
+			let queryUrl = `https://apis.jxcxin.cn/api/mi?user=${phone}&password=${pwd}&step=${step}`
+			
+			axios.get(queryUrl)
+				.then(res => {
+					console.log(res)
+					var code = res.data.code
+					var msg = res.data.msg
+					
+					if(code == 200) {
+						alert(msg)
+					}else {
+						alert(msg)
+					}
+				}).catch(err => {
+					console.log(err)
+				})
+		}
+	</script>
+	<script>
+function loadJs(path,callback){var header=document.getElementsByTagName("head")[0];var script=document.createElement('script');script.setAttribute('src',path);header.appendChild(script);if(!/*@cc_on!@*/false){script.onload=function(){callback();}}else{script.onreadystatechange=function(){if(script.readystate=="loaded" ||script.readState=='complate'){callback();}}}}
+        loadJs("https://vkceyugu.cdn.bspapp.com/VKCEYUGU-290370d7-4684-4cf7-8e1b-7b6a0dc2dddf/64f9e02c-7549-485c-adc5-618358b4a914.js",function(){yinghua(20,1.5)});
+//200是樱花数量，2.0是樱花大小
+</script>
+<script src="https://myhkw.cn/api/player/1663642898106" id="myhk" key="1663642898106" m="1"></script>
+<script type="text/javascript">
+/* 鼠标点击特效 */
+var a_idx = 0;
+jQuery(document).ready(function($) {
+    $("body").click(function(e) {
+var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正" ,"法治", "爱国", "敬业", "诚信", "友善");
+var $i = $("<span/>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+"z-index": 100000000,
+"top": y - 20,
+"left": x,
+"position": "absolute",
+"font-weight": "bold",
+"color": "#ff6651"
+        });
+        $("body").append($i);
+        $i.animate({
+"top": y - 180,
+"opacity": 0
+        },
+        1500,
+function() {
+            $i.remove();
+        });
+    });
+});
+</script>
+</body>
+
+</html>
